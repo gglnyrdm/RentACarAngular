@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { BrandsApiService } from '../../services/brandsApi.service';
 import { BrandListItemDto } from '../../models/brand-list-item-dto';
+import { ListGroupComponent } from '../../../../shared/components/list-group/list-group/list-group.component';
 
 @Component({
   selector: 'app-brands-list',
   standalone: true,
   imports: [
     CommonModule,
+    ListGroupComponent
   ],
   templateUrl: './brands-list.component.html',
   styleUrl: './brands-list.component.scss',
@@ -25,4 +27,5 @@ export class BrandsListComponent implements OnInit {
       this.change.markForCheck(); // ChangeDetectionStrategy.OnPush // Asekronik olarak çalıştığı için bu satırı ekledik.
     });
   }
+
 }

@@ -1,1 +1,15 @@
-<p *ngFor="let item of list; let i = index">{{ item.name }} {{ i }}</p>
+<div class="brand-list">
+    <table>
+        <tr id="brands">
+            <th >Marka Adı</th>
+        </tr>
+        <tr *ngFor="let item of list; let i = index">
+            <td>{{ item.name }}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+<!-- <app-list-group [items]="list"></app-list-group> -->

@@ -3,6 +3,8 @@ import { HomePageComponent } from './routers/home-page/home-page.component';
 import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
 import { TestPageComponent } from './routers/test-page/test-page.component';
 import { NotFoundPageComponent } from './routers/not-found-page/not-found-page.component';
+import { ModelsListComponent } from './features/models/components/models-list/models-list.component';
+import { BrandsListComponent } from './features/brands/components/brands-list/brands-list.component';
 
 export const routes: Routes = [
   // Home
@@ -18,12 +20,17 @@ export const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
+        path:'',
+        pathMatch:'full',
+        component:HomePageComponent 
+      },
+      {
         path: "models", // /home/models
-        component: HomePageComponent,
+        component: ModelsListComponent,
       },
       {
         path: "brands", // /home/brands
-        component: HomePageComponent,
+        component: BrandsListComponent,
       },
 
 

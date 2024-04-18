@@ -7,11 +7,12 @@ import {
 } from '@angular/core';
 import { ModelsApiService } from '../../services/modelsApi.service';
 import { ModelListItemDto } from '../../models/model-list-item-dto';
+import { ListGroupComponent } from '../../../../shared/components/list-group/list-group/list-group.component';
 
 @Component({
   selector: 'app-models-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ListGroupComponent],
   templateUrl: './models-list.component.html',
   styleUrl: './models-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
