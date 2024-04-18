@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { BrandsApiService } from '../../services/brandsApi.service';
 import { BrandListItemDto } from '../../models/brand-list-item-dto';
 import { ListGroupComponent } from '../../../../shared/components/list-group/list-group/list-group.component';
+import { ModelListItemDto } from '../../../models/models/model-list-item-dto';
+import { ModelsApiService } from '../../../models/services/modelsApi.service';
 
 @Component({
   selector: 'app-brands-list',
@@ -17,9 +19,12 @@ import { ListGroupComponent } from '../../../../shared/components/list-group/lis
 })
 export class BrandsListComponent implements OnInit {
   public list!: BrandListItemDto[];
+  public models: ModelListItemDto[] = [];
+
   constructor(
     private brandsApiService: BrandsApiService,
-    private change: ChangeDetectorRef
+    private change: ChangeDetectorRef,
+    private modelsApiService: ModelsApiService,
   ) {}
   ngOnInit(): void {
     this.brandsApiService.getList().subscribe((response) => {
@@ -27,5 +32,13 @@ export class BrandsListComponent implements OnInit {
       this.change.markForCheck(); // ChangeDetectionStrategy.OnPush // Asekronik olarak çalıştığı için bu satırı ekledik.
     });
   }
+
+  getModels(brandId: number) {
+    this.modelsApiService.getList().subscribe((response => {
+      this.models = response.filter(x => x.brandId == brandId);
+      this.change.markForCheck();
+    }))
+  }
+  
 
 }

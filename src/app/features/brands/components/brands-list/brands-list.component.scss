@@ -5,29 +5,26 @@
 
 td {
   background-color: rgb(230, 233, 230);
-  padding: 10px;
   min-width: 200px;
   text-align: center;
   border-radius: 3px;
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 1px solid #ddd;
-  padding: 8px;
   font-size: 20px;
 }
 td:hover {
   background-color: #04AA6D;
-  padding: 10px;
   min-width: 200px;
   text-align: center;
   border-radius: 3px;
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 1px solid #ddd;
-  padding: 8px;
   font-size: 20px;
-
+  cursor: pointer;
 }
+
 
 #brands th {
   padding-top: 12px;
@@ -37,6 +34,46 @@ td:hover {
   background-color: #04AA6D;
   border: 1px solid white;
 
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  font-size: 21px;
+}
+
+
+.model-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+td {
+  background-color: rgb(230, 233, 230);
+  text-align: center;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  padding: 20px;
+}
+td:hover {
+  background-color: #04AA6D;
+  text-align: center;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-size: 20px;
+}
+
+#models th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: #04AA6D;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
