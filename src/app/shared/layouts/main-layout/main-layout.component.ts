@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule, 
+    RouterModule,
     NavbarComponent,
     FooterComponent
   ],
