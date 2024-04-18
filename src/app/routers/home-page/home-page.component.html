@@ -1,0 +1,19 @@
+<h1>Rent A Car</h1>
+<p>Find best car for you!</p>
+Counter : {{counter}}
+<button (click)='sumCounter(1)'>+</button>
+<button (click)="sumCounter(-1)">-</button>
+
+<P *ngIf = 'counter == 0'> 
+    Counter is zero
+</P>
+<P *ngIf = 'counter > 0'> 
+    Counter is positive
+</P>
+<P *ngIf = 'counter < 0'> 
+    Counter is negative
+</P>
+<!-- Angular 17 -->
+<!-- @if (counter == 0) {
+    counter is zero
+} -->
