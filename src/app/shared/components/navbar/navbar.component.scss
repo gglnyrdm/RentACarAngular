@@ -1,3 +1,81 @@
-:host {
-  display: block;
+nav{
+  display: flex;
+  position: relative;
+  min-width: 100%;
+  min-height: 6rem;
+  background-color: white;
+  margin-bottom: 5px;
+}
+img{
+  max-width: 125px;
+  max-height: 125px;
+}
+.logo{
+  position: relative;
+  padding: 2px;
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  margin-left: 2rem;
+  padding-top: 40px;
+  margin-left: 20%;
+}
+.menu-button {
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  transition: .5s;
+  background-color: white;
+  border:none;
+  color: black;
+  font-weight: bold;
+}
+
+.menu-button:hover {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  border-radius: 3px;
+
+  background-color: #0eb762;
+  color: white;
+}
+
+.rent-button-div{
+  position: relative;
+  left:15%;
+}
+.rent-button{
+  position: relative;
+  top: 28%;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  background-color: #0eb762;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  transition: 0.5s;;
+}
+.rent-button:hover{
+  position: relative;
+  top: 28%;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  border: none;
 }
