@@ -23,8 +23,8 @@ export class BrandsListComponent implements OnInit {
 
   constructor(
     private brandsApiService: BrandsApiService,
-    private change: ChangeDetectorRef,
     private modelsApiService: ModelsApiService,
+    private change: ChangeDetectorRef
   ) {}
   ngOnInit(): void {
     this.brandsApiService.getList().subscribe((response) => {
@@ -33,7 +33,7 @@ export class BrandsListComponent implements OnInit {
     });
   }
 
-  getModels(brandId: number) {
+  getModelsByBrandId(brandId: number) {
     this.modelsApiService.getList().subscribe((response => {
       this.models = response.filter(x => x.brandId == brandId);
       this.change.markForCheck();
