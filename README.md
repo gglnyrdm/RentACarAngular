@@ -1,5 +1,5 @@
 # Brands Page
-![alt text](https://raw.githubusercontent.com/dogukankoc/RentACarAngular/main/image.png)
+![alt text](/image.png)
 # Rentacar
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.

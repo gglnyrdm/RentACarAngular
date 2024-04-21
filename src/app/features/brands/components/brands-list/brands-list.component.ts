@@ -34,8 +34,8 @@ export class BrandsListComponent implements OnInit {
   }
 
   getModelsByBrandId(brandId: number) {
-    this.modelsApiService.getList().subscribe((response => {
-      this.models = response.filter(x => x.brandId == brandId);
+    this.modelsApiService.getList({pageIndex:0,pageSize:100}).subscribe((response => {
+      this.models = response.items.filter(x => x.brandId == brandId);
       this.change.markForCheck();
     }))
   }

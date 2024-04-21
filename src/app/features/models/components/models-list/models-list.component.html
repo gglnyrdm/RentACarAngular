@@ -8,21 +8,17 @@
             <th>Günlük Kiralama Bedeli</th>
 
         </tr>
-        <tr *ngFor="let item of list; let i = index">
-            <td>{{item.id}}</td>
-            <td>{{item.brand.name}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.modelYear}}</td>
-            <td>{{item.dailyPrice}}</td>
+        <tr *ngFor="let model of list.items; let i = index">
+            <td>{{model.id}}</td>
+            <td>{{model.brand.name}}</td>
+            <td>{{model.name}}</td>
+            <td>{{model.modelYear}}</td>
+            <td>{{model.dailyPrice}}</td>
         </tr>
     </table>
 </div>
 
-
-
-<!-- <app-list-group></app-list-group> -->
-
-<!-- >= Angular 17 -->
-<!-- @for (item of list; track $index) {
-<p>{{ item.name }} {{ $index }}</p>
-} -->
+<div class="button-area">
+    <button *ngIf="list.hasPreviousPage" (click)="previousPage()">Önceki Sayfa</button>
+    <button *ngIf="list.hasNextPage" (click)="nextPage()">Sonraki Sayfa</button>
+</div>

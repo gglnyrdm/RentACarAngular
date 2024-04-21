@@ -6,6 +6,8 @@ import { CreatedModelResponse } from '../models/createted-model-response';
 import { CreateModelRequest } from '../models/create-model-request';
 import { UpdateModelRequest } from '../models/update-model-request';
 import { UpdatedModelResponse } from '../models/updated-model-request';
+import { GetModelListRequest } from '../models/get-model-list-request';
+import { GetModelListResponse } from '../models/get-model-list-response';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +15,9 @@ import { UpdatedModelResponse } from '../models/updated-model-request';
 export class ModelsApiService {
   constructor(private http: HttpClient) {}
 
-  getList(): Observable<ModelListItemDto[]> {
-    return this.http.get<ModelListItemDto[]>('http://localhost:3000/models');
-  }
+  // getList(): Observable<ModelListItemDto[]> {
+  //   return this.http.get<ModelListItemDto[]>('http://localhost:3000/models');
+  // }
 
   
 
@@ -32,5 +34,29 @@ export class ModelsApiService {
       `http://localhost:3000/models/${updateModelRequest.id}`,
       updateModelRequest
     );
+  }
+
+  getList(request: GetModelListRequest): Observable<GetModelListResponse> {
+    const newRequest: { [key: string]: string | number } = {
+      _page: request.pageIndex + 1,
+      _limit: request.pageSize,
+    };
+debugger;
+    return this.http
+      .get<ModelListItemDto[]>('http://localhost:3000/models', {
+        params: newRequest,
+      })
+      .pipe(
+        map((response) => {
+          const newResponse: GetModelListResponse = {
+            pageIndex: request.pageIndex,
+            pageSize: request.pageSize,
+            hasNextPage: request.pageIndex < 4,
+            hasPreviousPage: request.pageIndex > 0,
+            items: response,
+          };
+          return newResponse;
+        })
+      );
   }
 }
