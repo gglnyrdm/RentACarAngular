@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ModelsApiService } from '../../services/modelsApi.service';
 import { CreateModelRequest } from '../../models/create-model-request';
-import { BrandsApiService } from '../../../brands/services/brandsApi.service';
 
 @Component({
   selector: 'app-create-model-form',
@@ -22,13 +21,12 @@ form: FormGroup = this.fb.group({
   brandName: new FormControl('',[Validators.required]),
   brandId: new FormControl('',[Validators.required]),
   name: new FormControl('',[Validators.required]),
-  modelYear: new FormControl('2023',[Validators.required]),
-  dailyPrice: new FormControl('1250',[Validators.required])
+  modelYear: new FormControl('',[Validators.required]),
+  dailyPrice: new FormControl('',[Validators.required])
 });
 
 constructor(private fb:FormBuilder, 
-  private modelsApiService:ModelsApiService, 
-  private brandApiService:BrandsApiService) {}
+  private modelsApiService:ModelsApiService) {}
 
 createModel() {
   const createModelRequest : CreateModelRequest={

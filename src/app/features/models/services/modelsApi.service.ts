@@ -4,6 +4,8 @@ import { map,Observable } from 'rxjs';
 import { ModelListItemDto } from '../models/model-list-item-dto';
 import { CreatedModelResponse } from '../models/createted-model-response';
 import { CreateModelRequest } from '../models/create-model-request';
+import { UpdateModelRequest } from '../models/update-model-request';
+import { UpdatedModelResponse } from '../models/updated-model-request';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +24,13 @@ export class ModelsApiService {
     return this.http.post<CreatedModelResponse>(
       'http://localhost:3000/models',
       createModelRequest
+    );
+  }
+
+  putModel(updateModelRequest:UpdateModelRequest):Observable<UpdatedModelResponse>{
+    return  this.http.put<UpdatedModelResponse>(
+      `http://localhost:3000/models/${updateModelRequest.id}`,
+      updateModelRequest
     );
   }
 }
