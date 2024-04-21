@@ -15,12 +15,6 @@ import { GetModelListResponse } from '../models/get-model-list-response';
 export class ModelsApiService {
   constructor(private http: HttpClient) {}
 
-  // getList(): Observable<ModelListItemDto[]> {
-  //   return this.http.get<ModelListItemDto[]>('http://localhost:3000/models');
-  // }
-
-  
-
   postModel(createModelRequest:CreateModelRequest): Observable<CreatedModelResponse>{
     
     return this.http.post<CreatedModelResponse>(
@@ -37,11 +31,10 @@ export class ModelsApiService {
   }
 
   getList(request: GetModelListRequest): Observable<GetModelListResponse> {
-    const newRequest: { [key: string]: string | number } = {
+    const newRequest= {
       _page: request.pageIndex + 1,
-      _limit: request.pageSize,
+      _limit: request.pageSize, //Not working _per_page. Only works with the assumed value
     };
-debugger;
     return this.http
       .get<ModelListItemDto[]>('http://localhost:3000/models', {
         params: newRequest,
