@@ -7,6 +7,7 @@ import { ModelsListComponent } from './features/models/components/models-list/mo
 import { BrandsListComponent } from './features/brands/components/brands-list/brands-list.component';
 import { CreateBrandPageComponent } from './routers/create-brand-page/create-brand-page.component';
 import { UpdateBrandPageComponent } from './routers/update-brand-page/update-brand-page.component';
+import { CreateModelPageComponent } from './routers/create-model-page/create-model-page.component';
 
 export const routes: Routes = [
   // Home
@@ -38,11 +39,6 @@ export const routes: Routes = [
 
     ]
   },
-  // Test Page
-  {
-    path: 'layout-test',
-    component: TestPageComponent
-  },
   {
     path:'createbrand',
     component:CreateBrandPageComponent
@@ -50,6 +46,10 @@ export const routes: Routes = [
   {
     path:'updatebrand',
     component:UpdateBrandPageComponent
+  },
+  {
+    path:'createmodel',
+    component:CreateModelPageComponent
   },
   // 404 Not Found Page
   {
