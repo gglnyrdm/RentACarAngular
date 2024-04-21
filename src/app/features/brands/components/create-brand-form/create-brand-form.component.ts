@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { BrandsApiService } from '../../services/brandsApi.service';
 import { PostBrandRequest } from '../../models/post-brand-request';
 import { InvokeFunctionExpr } from '@angular/compiler';
@@ -22,9 +22,9 @@ export class CreateBrandFormComponent {
     //Form Controls
     name: [
       '',
-      [Validators.required]
-    ],
-
+      [Validators.requiredTrue]
+    ]
+   
   });
 
   constructor(private fb:FormBuilder,

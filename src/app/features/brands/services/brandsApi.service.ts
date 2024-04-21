@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { BrandListItemDto } from '../models/brand-list-item-dto';
 import { PostBrandRequest } from '../models/post-brand-request';
 import { PostBrandResponse } from '../models/post-brand-response';
+import { UpdateBrandRequest } from '../models/update-brand-request';
+import { UpdateBrandResponse } from '../models/update-brand-response';
 
 
 
@@ -22,6 +24,14 @@ export class BrandsApiService {
     return this.http.post<PostBrandResponse>(
       'http://localhost:3000/brands',
       brand
+    );
+  }
+
+  updateBrand(updateBrandRequest:UpdateBrandRequest):Observable<UpdateBrandResponse>{
+    debugger;
+    return  this.http.put<UpdateBrandResponse>(
+      `http://localhost:3000/brands/${updateBrandRequest.id}`,
+      updateBrandRequest
     );
   }
 
