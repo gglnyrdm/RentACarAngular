@@ -10,6 +10,7 @@ import { UpdateBrandPageComponent } from './routers/update-brand-page/update-bra
 import { CreateModelPageComponent } from './routers/create-model-page/create-model-page.component';
 import { UpdateModelPageComponent } from './routers/update-model-page/update-model-page.component';
 import { ModelDetailsPageComponent } from './routers/model-details-page/model-details-page.component';
+import { CustomerListComponent } from './features/customers/components/customer-list/customer-list.component';
 
 export const routes: Routes = [
   // Home
@@ -37,6 +38,10 @@ export const routes: Routes = [
         path: "brands", // /home/brands
         component: BrandsListComponent,
       },
+      {
+        path: "customers", 
+        component: CustomerListComponent
+      },
 
 
     ]
@@ -61,6 +66,7 @@ export const routes: Routes = [
     path:'models/:modelId',
     component:ModelDetailsPageComponent
   },
+ 
   // 404 Not Found Page
   {
     path: '**', // Her path'de çalışır. En sona yazılmalı.
