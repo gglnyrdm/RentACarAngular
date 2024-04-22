@@ -9,6 +9,7 @@ import { CreateBrandPageComponent } from './routers/create-brand-page/create-bra
 import { UpdateBrandPageComponent } from './routers/update-brand-page/update-brand-page.component';
 import { CreateModelPageComponent } from './routers/create-model-page/create-model-page.component';
 import { UpdateModelPageComponent } from './routers/update-model-page/update-model-page.component';
+import { ModelDetailsPageComponent } from './routers/model-details-page/model-details-page.component';
 
 export const routes: Routes = [
   // Home
@@ -55,6 +56,10 @@ export const routes: Routes = [
   {
     path:'updatemodel',
     component:UpdateModelPageComponent
+  },
+  {
+    path:'models/:modelId',
+    component:ModelDetailsPageComponent
   },
   // 404 Not Found Page
   {

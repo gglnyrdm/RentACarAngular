@@ -11,11 +11,12 @@ import { ListGroupComponent } from '../../../../shared/components/list-group/lis
 import { PageRequest } from '../../../../core/page-request';
 import { GetModelListRequest } from '../../models/get-model-list-request';
 import { PageResponse } from '../../../../core/page-response';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-models-list',
   standalone: true,
-  imports: [CommonModule,ListGroupComponent],
+  imports: [CommonModule,ListGroupComponent,RouterModule],
   templateUrl: './models-list.component.html',
   styleUrl: './models-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

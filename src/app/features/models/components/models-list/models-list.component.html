@@ -8,8 +8,8 @@
             <th>Günlük Kiralama Bedeli</th>
 
         </tr>
-        <tr *ngFor="let model of list.items; let i = index">
-            <td>{{model.id}}</td>
+        <tr *ngFor="let model of list.items; let i = index"  routerLink="/models/{{ model.id }}">
+            <td >{{model.id}}</td>
             <td>{{model.brand.name}}</td>
             <td>{{model.name}}</td>
             <td>{{model.modelYear}}</td>
@@ -22,3 +22,4 @@
     <button *ngIf="list.hasPreviousPage" (click)="previousPage()">Önceki Sayfa</button>
     <button *ngIf="list.hasNextPage" (click)="nextPage()">Sonraki Sayfa</button>
 </div>
+<p class="page-index">{{list.pageIndex+1}}</p>

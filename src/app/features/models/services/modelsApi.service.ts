@@ -52,4 +52,8 @@ export class ModelsApiService {
         })
       );
   }
+
+  getById(id: number): Observable<ModelListItemDto> {
+    return this.http.get<ModelListItemDto>(`http://localhost:3000/models/${id}`);
+  }
 }
