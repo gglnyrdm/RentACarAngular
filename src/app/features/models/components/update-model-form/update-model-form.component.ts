@@ -15,7 +15,7 @@ import { ControlErrorHandlerPipe } from '../../../../core/pipes/controlErrorHand
   ],
   templateUrl: './update-model-form.component.html',
   styleUrl: './update-model-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UpdateModelFormComponent {
   form: FormGroup = this.fb.group({
