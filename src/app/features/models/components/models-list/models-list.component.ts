@@ -12,11 +12,12 @@ import { PageRequest } from '../../../../core/page-request';
 import { GetModelListRequest } from '../../models/get-model-list-request';
 import { PageResponse } from '../../../../core/page-response';
 import { RouterModule } from '@angular/router';
+import { VatAddPipe } from '../../../../core/pipes/vat-add.pipe';
 
 @Component({
   selector: 'app-models-list',
   standalone: true,
-  imports: [CommonModule,ListGroupComponent,RouterModule],
+  imports: [CommonModule,ListGroupComponent,RouterModule,VatAddPipe],
   templateUrl: './models-list.component.html',
   styleUrl: './models-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
