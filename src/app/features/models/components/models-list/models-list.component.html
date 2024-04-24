@@ -13,7 +13,7 @@
             <td>{{model.brand.name}}</td>
             <td>{{model.name}}</td>
             <td>{{model.modelYear}}</td>
-            <td>{{model.dailyPrice | vatAdd : 10 | currency:"₺"}}</td>
+            <td>{{model.dailyPrice | vatAdd | currency:'₺'}}</td>
         </tr>
     </table>
 </div>

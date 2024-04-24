@@ -1,0 +1,71 @@
+<!-- Upper Case Pipe -->
+<h5>Upper Case Pipe</h5>
+<p>{{nameLowerCase | uppercase}}</p>
+<p>{{'karakterlerin hepsi büyüyecek' | uppercase}} </p>
+
+
+<!-- Lowe Case Pipe -->
+<h5>Lower Case Pipe</h5>
+<p>{{nameUpperCase | lowercase}}</p>
+<p>{{'KARAKTERLERİN HEPSİ KÜÇÜLECEK' | lowercase}} </p>
+
+<!-- Title Case Pipe -->
+<h5>Title Case Pipe</h5>
+<p>{{stringTiteCase | titlecase}}</p>
+<p>{{'her kelimenin ilk harfi normalde küçük yazılmıştı' | titlecase}}</p>
+
+
+<!-- Currency Pipe -->
+<h5>Currency Pipe</h5>
+<p>{{price| currency}}</p>
+<p>{{price| currency : 'USD'}}</p>
+<p>{{price| currency: '₺'}}</p>
+<p>{{price| currency:'TL'}}</p>
+<p>{{1250 | currency}}</p>
+
+<!-- Percent Pipe -->
+<h5>Percent Pipe</h5>
+<p>{{discount | percent}}</p>
+<p>{{.25 | percent}}</p>
+
+<!-- Json Pipe -->
+<h5>Json Pipe</h5>
+<p>{{object|json}}</p> <!--Çıktı : { "firstName": "Dogukan", "lastName": "Koc", "mail": "dogukan.koc@mail.com", "age": 26 }-->
+
+<!-- Slice Pipe -->
+<h5>Slice Pipe</h5>
+<p>{{ 'Angular' | slice:0:3 }}</p>  <!-- Çıktı: Ang -->
+<p>{{stringSlice | slice:8:17}}</p> <!-- Çıktı: Framework -->
+<p>{{arraySlice | slice:2:6}}</p> <!-- Çıktı: 3,4,5,6-->
+
+<!-- Key Value Pipe -->
+<h5>Key Value Pipe</h5>
+<p *ngFor = 'let item of object | keyvalue' >
+    Key: {{item.key}}  Value: {{item.value}}
+</p>
+
+<!-- Date Pipe -->
+<h5>Date Pipe</h5>
+<p>{{birthDate | date}}</p>
+<p>{{birthDate | date: 'fullDate'}}</p>
+<p>{{birthDate | date: 'medium'}}</p>
+<p>{{birthDate | date: 'shortTime'}}</p>
+<p>{{birthDate | date: 'mm:ss'}}</p>
+
+<!-- Number Pipe -->
+<h5>Number Pipe</h5>
+<p>{{price | number:'1.2-3'}}</p>
+
+<!-- Async Pipe -->
+<h5>Async Pipe</h5>
+<p>{{ name$ | async }}</p> <!--Çıktı : Lorem-->
+<!-- Async kullanmazsan -->
+<p>{{ name$}}</p> <!--Çıktı : [object Object]-->
+
+
+
+
+
+
+
+

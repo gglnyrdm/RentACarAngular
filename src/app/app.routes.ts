@@ -13,6 +13,7 @@ import { ModelDetailsPageComponent } from './routers/model-details-page/model-de
 import { CustomerListComponent } from './features/customers/components/customer-list/customer-list.component';
 import { CarsListComponent } from './features/cars/components/cars-list/cars-list.component';
 import { RentalListComponent } from './features/rentals/components/rental-list/rental-list.component';
+import { PipeExampleComponent } from './features/pipes-example/pipe-example/pipe-example.component';
 
 export const routes: Routes = [
   // Home
@@ -75,6 +76,10 @@ export const routes: Routes = [
   {
     path:'models/:modelId',
     component:ModelDetailsPageComponent
+  },
+  {
+    path:'pipes',
+    component:PipeExampleComponent
   },
  
   // 404 Not Found Page
