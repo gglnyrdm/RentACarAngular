@@ -3,13 +3,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UpdateModelRequest } from '../../models/update-model-request';
 import { ModelsApiService } from '../../services/modelsApi.service';
+import { ControlErrorHandlerPipe } from '../../../../core/pipes/controlErrorHandler.pipe';
 
 @Component({
   selector: 'app-update-model-form',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ControlErrorHandlerPipe
   ],
   templateUrl: './update-model-form.component.html',
   styleUrl: './update-model-form.component.scss',
@@ -17,12 +19,12 @@ import { ModelsApiService } from '../../services/modelsApi.service';
 })
 export class UpdateModelFormComponent {
   form: FormGroup = this.fb.group({
-    id: new FormControl('',[Validators.required]),
-    brandName: new FormControl('',[Validators.required]),
-    brandId: new FormControl('',[Validators.required]),
-    name: new FormControl('',[Validators.required]),
+    id: new FormControl('',[Validators.required,Validators.min(0)]),
+    brandName: new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]),
+    brandId: new FormControl('',[Validators.required,Validators.min(0)]),
+    name: new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]),
     modelYear: new FormControl('2023',[Validators.required]),
-    dailyPrice: new FormControl('1250',[Validators.required])
+    dailyPrice: new FormControl('1250',[Validators.required,Validators.min(0)])
   });
 constructor(
   private fb:FormBuilder,

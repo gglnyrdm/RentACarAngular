@@ -3,13 +3,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ModelsApiService } from '../../services/modelsApi.service';
 import { CreateModelRequest } from '../../models/create-model-request';
+import { ControlErrorHandlerPipe } from '../../../../core/pipes/controlErrorHandler.pipe';
 
 @Component({
   selector: 'app-create-model-form',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ControlErrorHandlerPipe
   ],
   templateUrl: './create-model-form.component.html',
   styleUrl: './create-model-form.component.scss',
@@ -18,11 +20,11 @@ import { CreateModelRequest } from '../../models/create-model-request';
 export class CreateModelFormComponent {
 
 form: FormGroup = this.fb.group({
-  brandName: new FormControl('',[Validators.required]),
-  brandId: new FormControl('',[Validators.required]),
-  name: new FormControl('',[Validators.required]),
+  brandName: new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(20)],),
+  brandId: new FormControl('',[Validators.required,Validators.min(0)]),
+  name: new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]),
   modelYear: new FormControl('',[Validators.required]),
-  dailyPrice: new FormControl('',[Validators.required])
+  dailyPrice: new FormControl('',[Validators.required,Validators.min(0)])
 });
 
 constructor(private fb:FormBuilder, 
@@ -55,7 +57,7 @@ createModel() {
   })
 }
 onSubmitForm() {
-  
+  this.form.markAllAsTouched();
   this.form.valid ? this.createModel() : console.error('Form is invalid');
    }
 
