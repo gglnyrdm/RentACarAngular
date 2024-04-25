@@ -7,6 +7,7 @@ import { InvokeFunctionExpr } from '@angular/compiler';
 import { IfNotDirective } from '../../../../core/directives/if-not.directive';
 import { ControlErrorHandlerPipe } from '../../../../core/pipes/controlErrorHandler.pipe';
 import { ButtonDirective } from '../../../../core/directives/button.directive';
+import { NoCharacterInputDirective } from '../../../../core/directives/no-character-input.directive';
 
 @Component({
   selector: 'app-create-brand-form',
@@ -16,7 +17,8 @@ import { ButtonDirective } from '../../../../core/directives/button.directive';
     ReactiveFormsModule,
     IfNotDirective,
     ControlErrorHandlerPipe,
-    ButtonDirective
+    ButtonDirective,
+    NoCharacterInputDirective
   ],
   templateUrl: './create-brand-form.component.html',
   styleUrl: './create-brand-form.component.scss',

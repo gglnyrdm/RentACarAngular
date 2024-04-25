@@ -1,5 +1,5 @@
 <form [formGroup] = "form" (submit)="onFormSubmit()">
-   Name: <input type="text" formControlName ="name"/> 
+   Name: <input type="text" appNoCharacterInput formControlName ="name"/> 
    <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">{{ form.get("name")?.errors|controlErrorHandler }}</div>
    <span *appIfNot="form.get('name')!.invalid" >This field valid.</span>
 <br>
