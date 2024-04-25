@@ -1,2 +1,9 @@
 <h1>Create Model</h1>
-<app-create-model-form></app-create-model-form>
+
+<div *appWelcome="3000; then contentRef">
+    <p>Hoşgeldiniz! 3 sn sonra içerik yüklenecektir...</p>
+  </div>
+  
+  <ng-template #contentRef>
+    <app-create-model-form></app-create-model-form>
+  </ng-template>
