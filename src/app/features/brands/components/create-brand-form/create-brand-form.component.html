@@ -3,5 +3,5 @@
    <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">{{ form.get("name")?.errors|controlErrorHandler }}</div>
    <span *appIfNot="form.get('name')!.invalid" >This field valid.</span>
 <br>
-   <input type="submit">
+   <input appButton backgroundColor="orange" color="blue" hoverBgColor="red" type="submit">
 </form> 
