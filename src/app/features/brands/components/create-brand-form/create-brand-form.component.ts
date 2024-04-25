@@ -4,13 +4,17 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { BrandsApiService } from '../../services/brandsApi.service';
 import { PostBrandRequest } from '../../models/post-brand-request';
 import { InvokeFunctionExpr } from '@angular/compiler';
+import { IfNotDirective } from '../../../../core/directives/if-not.directive';
+import { ControlErrorHandlerPipe } from '../../../../core/pipes/controlErrorHandler.pipe';
 
 @Component({
   selector: 'app-create-brand-form',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IfNotDirective,
+    ControlErrorHandlerPipe
   ],
   templateUrl: './create-brand-form.component.html',
   styleUrl: './create-brand-form.component.scss',
@@ -22,7 +26,7 @@ export class CreateBrandFormComponent {
     //Form Controls
     name: [
       '',
-      [Validators.requiredTrue]
+      [Validators.required]
     ]
    
   });

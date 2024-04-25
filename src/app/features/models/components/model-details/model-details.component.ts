@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { ModelsApiService } from '../../services/modelsApi.service';
 import { ModelListItemDto } from '../../models/model-list-item-dto';
+import { HighlightDirective } from '../../../../core/directives/highlight.directive';
 
 @Component({
   selector: 'app-model-details',
   standalone: true,
   imports: [
     CommonModule,
+    HighlightDirective
   ],
   templateUrl: './model-details.component.html',
   styleUrl: './model-details.component.scss',

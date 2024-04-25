@@ -8,8 +8,9 @@ import { ValidationErrors } from '@angular/forms';
 export class ControlErrorHandlerPipe implements PipeTransform {
 
   transform(control: ValidationErrors | null | undefined, ...args: unknown[]): unknown {
+    const minLength = args[0] as number | undefined;
     if (control?.["required"]) return "This field is required";
-    if (control?.['minlength']) return "This field should be minimum 2 characters";
+    if (control?.['minlength']) return `This field should be minimum ${control['minlength'].requiredLength} characters`;
     if(control?.['maxlength']) return "This field should be maximum 20 characters";
     if(control?.['min']) return "This field should be 0";
 

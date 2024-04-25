@@ -1,4 +1,7 @@
 <form [formGroup] = "form" (submit)="onFormSubmit()">
    Name: <input type="text" formControlName ="name"/> 
-<input type="submit">
+   <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">{{ form.get("name")?.errors|controlErrorHandler }}</div>
+   <span *appIfNot="form.get('name')!.invalid" >This field valid.</span>
+<br>
+   <input type="submit">
 </form> 

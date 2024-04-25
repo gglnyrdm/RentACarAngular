@@ -57,7 +57,9 @@ createModel() {
   })
 }
 onSubmitForm() {
-  this.form.markAllAsTouched();
+  console.log(this.form.controls);
+  
+  this.form.markAllAsTouched(); // All controls touched
   this.form.valid ? this.createModel() : console.error('Form is invalid');
    }
 
