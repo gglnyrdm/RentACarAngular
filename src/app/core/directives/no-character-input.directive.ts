@@ -10,3 +10,5 @@ export class NoCharacterInputDirective {
     input.value = input.value.replace(/[^a-zA-Z\s?-_}{[}./()]/g, ''); 
   }
  }
+
+
