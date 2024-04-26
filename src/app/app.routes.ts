@@ -14,6 +14,8 @@ import { CustomerListComponent } from './features/customers/components/customer-
 import { CarsListComponent } from './features/cars/components/cars-list/cars-list.component';
 import { RentalListComponent } from './features/rentals/components/rental-list/rental-list.component';
 import { PipeExampleComponent } from './features/pipes-example/pipe-example/pipe-example.component';
+import { securedRouteGuard } from './shared/guards/SecuredRoute.guard';
+import { logableRouteGuard } from './shared/guards/LogableRoute.guard';
 
 export const routes: Routes = [
   // Home
@@ -59,7 +61,12 @@ export const routes: Routes = [
   },
   {
     path:'createbrand',
-    component:CreateBrandPageComponent
+    component:CreateBrandPageComponent,
+    canActivate: [securedRouteGuard, logableRouteGuard],
+    data:
+      {
+        requiredUserRole: 'admin',
+      },
   },
   {
     path:'updatebrand',
